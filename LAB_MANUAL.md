@@ -81,6 +81,11 @@ Mongo DB ecosystem, Importing and Exporting data, Mongo query language, Updating
 | 3 | 3 | | Question Paper Set Selector (Class & Function) - ReactJS | 11 |
 | 4 | 4 | | Basic Calculator - ReactJS | 13 |
 | 5 | 5 | | Kids Calculator Game - ReactJS | 15 |
+| 6 | 6 | | Display First N Natural Numbers - ReactJS | 17 |
+| 7 | 7 | | Armstrong Number Checker - ReactJS | 19 |
+| 8 | 8 | | Factorial Calculator (Standalone) - ReactJS | 21 |
+| 9 | 9 | | Greatest of 3 Numbers - ReactJS | 23 |
+| 10 | 10 | | 4-Box Ball Game - ReactJS | 25 |
 
 ---
 
@@ -682,38 +687,562 @@ Successfully created an educational kids calculator game that combines mathemati
 
 <div style="page-break-after: always;"></div>
 
+## EX.NO: 6 - DISPLAY FIRST N NATURAL NUMBERS
+
+### AIM
+Design a ReactJS application to display the first N natural numbers in a grid layout.
+
+### GITHUB REPOSITORY
+https://github.com/Guru006-Dev/react-math-assignments
+
+### DEPLOYED URL
+https://react-math-assignments.vercel.app/question-6
+
+### PROJECT LOCATION
+`c:\Users\Guru\Desktop\Full Stack\React_project`
+
+### COMPONENT FILE
+`src/components/Question6.jsx`
+
+### LIST OF FILE NAMES WITH PURPOSE
+
+| FileName | Purpose |
+|----------|---------|
+| Question6.jsx | Component to generate and display natural numbers |
+| App.jsx | Routing configuration |
+| index.css | Global styling |
+
+### CONCEPTS USED IN THE APPLICATION
+
+| Concept Name | General Purpose | Code File Where Used |
+|--------------|-----------------|---------------------|
+| React useState Hook | Managing input value and generated numbers | Question6.jsx |
+| Array.from() Method | Creating array of sequential numbers | Question6.jsx |
+| Array Mapping | Rendering each number in grid | Question6.jsx |
+| CSS Grid Layout | Displaying numbers in responsive grid | Question6.jsx (inline styles) |
+| Conditional Rendering | Showing results only when generated | Question6.jsx |
+
+### ALGORITHM
+```
+1. Accept input N from user
+2. Validate N is a positive integer
+3. Create array using Array.from({length: N}, (_, i) => i + 1)
+4. Display numbers in a grid layout
+5. Show count and range information
+```
+
+### KEY FEATURES
+
+| Feature | Description |
+|---------|-------------|
+| **Grid Display** | Numbers shown in auto-filling grid layout |
+| **Visual Cards** | Each number in styled card with gradient |
+| **Scrollable** | Large number sets in scrollable container |
+| **Clear Function** | Reset and clear functionality |
+| **Input Validation** | Ensures positive integer input |
+
+### TEST CASES
+
+| Input (N) | Output | Number Count |
+|-----------|--------|--------------|
+| 5 | 1, 2, 3, 4, 5 | 5 numbers |
+| 10 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | 10 numbers |
+| 20 | 1-20 in grid | 20 numbers |
+| 50 | 1-50 in scrollable grid | 50 numbers |
+
+### OUTPUT FORMAT
+- Grid of numbered cards with gradient background
+- Each card displays one natural number
+- Shows range (1 to N) and total count
+- Formula display: Natural numbers = {1, 2, 3, ..., n}
+
+### RESULT
+Successfully implemented a natural numbers generator with responsive grid layout and visual card display for each number.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## EX.NO: 7 - ARMSTRONG NUMBER CHECKER
+
+### AIM
+Implement a ReactJS program to check whether a given number is an Armstrong number (Narcissistic number).
+
+### GITHUB REPOSITORY
+https://github.com/Guru006-Dev/react-math-assignments
+
+### DEPLOYED URL
+https://react-math-assignments.vercel.app/question-7
+
+### PROJECT LOCATION
+`c:\Users\Guru\Desktop\Full Stack\React_project`
+
+### COMPONENT FILE
+`src/components/Question7.jsx`
+
+### LIST OF FILE NAMES WITH PURPOSE
+
+| FileName | Purpose |
+|----------|---------|
+| Question7.jsx | Armstrong number checker component |
+| App.jsx | Routing configuration |
+| index.css | Global styling |
+
+### CONCEPTS USED IN THE APPLICATION
+
+| Concept Name | General Purpose | Code File Where Used |
+|--------------|-----------------|---------------------|
+| React useState Hook | Managing number input and result | Question7.jsx |
+| String Manipulation | Converting number to array of digits | Question7.jsx |
+| Math.pow() Function | Calculating power of each digit | Question7.jsx |
+| Array reduce() Method | Summing powers of digits | Question7.jsx |
+| Conditional Styling | Different colors for result types | Question7.jsx |
+
+### ALGORITHM
+```
+1. Accept number from user
+2. Convert number to string and extract digits
+3. Count number of digits (n)
+4. For each digit d:
+   Calculate d^n
+5. Sum all the powers
+6. Compare sum with original number
+7. If equal: Armstrong Number
+   Else: Not Armstrong Number
+```
+
+### ARMSTRONG NUMBER DEFINITION
+A number is called Armstrong number if:
+**sum of (each digit)^(number of digits) = original number**
+
+### EXAMPLES
+
+| Number | Calculation | Result |
+|--------|-------------|--------|
+| 153 | 1³ + 5³ + 3³ = 1 + 125 + 27 = 153 | ✓ Armstrong |
+| 370 | 3³ + 7³ + 0³ = 27 + 343 + 0 = 370 | ✓ Armstrong |
+| 9474 | 9⁴ + 4⁴ + 7⁴ + 4⁴ = 6561 + 256 + 2401 + 256 = 9474 | ✓ Armstrong |
+| 123 | 1³ + 2³ + 3³ = 1 + 8 + 27 = 36 | ✗ Not Armstrong |
+
+### KEY FEATURES
+
+| Feature | Description |
+|---------|-------------|
+| **Detailed Breakdown** | Shows calculation step-by-step |
+| **Visual Result** | Color-coded result (blue for Armstrong, pink for not) |
+| **Examples Section** | Common Armstrong numbers shown |
+| **Calculation Display** | Powers and sum clearly displayed |
+| **Definition Box** | Educational information included |
+
+### TEST CASES
+
+| Input | Digits | Calculation | Is Armstrong? |
+|-------|--------|-------------|---------------|
+| 0 | 1 digit | 0¹ = 0 | ✓ Yes |
+| 9 | 1 digit | 9¹ = 9 | ✓ Yes |
+| 153 | 3 digits | 1³ + 5³ + 3³ = 153 | ✓ Yes |
+| 1634 | 4 digits | 1⁴ + 6⁴ + 3⁴ + 4⁴ = 1634 | ✓ Yes |
+| 123 | 3 digits | 1³ + 2³ + 3³ = 36 ≠ 123 | ✗ No |
+
+### RESULT
+Successfully created an Armstrong number checker with detailed calculation breakdown and visual result indication.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## EX.NO: 8 - FACTORIAL CALCULATOR (STANDALONE)
+
+### AIM
+Implement a ReactJS program to calculate the factorial of any non-negative integer.
+
+### GITHUB REPOSITORY
+https://github.com/Guru006-Dev/react-math-assignments
+
+### DEPLOYED URL
+https://react-math-assignments.vercel.app/question-8
+
+### PROJECT LOCATION
+`c:\Users\Guru\Desktop\Full Stack\React_project`
+
+### COMPONENT FILE
+`src/components/Question8.jsx`
+
+### LIST OF FILE NAMES WITH PURPOSE
+
+| FileName | Purpose |
+|----------|---------|
+| Question8.jsx | Standalone factorial calculator component |
+| App.jsx | Routing configuration |
+| index.css | Global styling |
+
+### CONCEPTS USED IN THE APPLICATION
+
+| Concept Name | General Purpose | Code File Where Used |
+|--------------|-----------------|---------------------|
+| React useState Hook | Managing input and factorial result | Question8.jsx |
+| Iterative Algorithm | Calculating factorial efficiently | Question8.jsx |
+| Number Formatting | Displaying large numbers with commas | Question8.jsx |
+| Input Validation | Preventing negative and very large inputs | Question8.jsx |
+| Calculation Steps | Showing multiplication sequence | Question8.jsx |
+
+### ALGORITHM
+```
+1. Accept non-negative integer n from user
+2. Validate input (n ≥ 0 and n ≤ 170)
+3. If n = 0 or n = 1, return 1
+4. Initialize factorial = 1
+5. For i from n down to 1:
+   a. factorial = factorial × i
+   b. Store i in steps array
+6. Display factorial and steps
+```
+
+**Formula:** n! = n × (n-1) × (n-2) × ... × 2 × 1
+
+### KEY FEATURES
+
+| Feature | Description |
+|---------|-------------|
+| **Large Number Support** | Handles factorials up to 170! |
+| **Step Display** | Shows multiplication sequence |
+| **Formatted Output** | Numbers with comma separators |
+| **Validation** | Prevents overflow and invalid input |
+| **Reference Section** | Common factorial examples |
+
+### TEST CASES
+
+| Input | Factorial | Number of Digits |
+|-------|-----------|------------------|
+| 0 | 1 | 1 |
+| 1 | 1 | 1 |
+| 5 | 120 | 3 |
+| 10 | 3,628,800 | 7 |
+| 20 | 2,432,902,008,176,640,000 | 19 |
+| 50 | 3.04×10⁶⁴ | 65 |
+
+### SPECIAL CASES
+
+| Case | Handling |
+|------|----------|
+| n = 0 | Returns 1 (0! = 1 by definition) |
+| n = 1 | Returns 1 |
+| n > 170 | Alert: Number too large |
+| n < 0 | Alert: Not defined for negatives |
+
+### OUTPUT FEATURES
+- Large display of result with comma formatting
+- Calculation steps showing full multiplication sequence
+- Number of digits in the result
+- Reference table with common factorials
+
+### RESULT
+Successfully implemented a robust factorial calculator with support for large numbers and comprehensive step display.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## EX.NO: 9 - GREATEST OF 3 NUMBERS
+
+### AIM
+Create a ReactJS application to find the maximum value among three numbers.
+
+### GITHUB REPOSITORY
+https://github.com/Guru006-Dev/react-math-assignments
+
+### DEPLOYED URL
+https://react-math-assignments.vercel.app/question-9
+
+### PROJECT LOCATION
+`c:\Users\Guru\Desktop\Full Stack\React_project`
+
+### COMPONENT FILE
+`src/components/Question9.jsx`
+
+### LIST OF FILE NAMES WITH PURPOSE
+
+| FileName | Purpose |
+|----------|---------|
+| Question9.jsx | Component to find greatest of 3 numbers |
+| App.jsx | Routing configuration |
+| index.css | Global styling |
+
+### CONCEPTS USED IN THE APPLICATION
+
+| Concept Name | General Purpose | Code File Where Used |
+|--------------|-----------------|---------------------|
+| React useState Hook | Managing three number inputs and result | Question9.jsx |
+| Math.max() Method | Finding maximum value | Question9.jsx |
+| Visual Comparison | Highlighting greatest number | Question9.jsx |
+| Multiple Inputs | Handling three separate input fields | Question9.jsx |
+| Conditional Styling | Scaling up greatest number card | Question9.jsx |
+
+### ALGORITHM
+
+**Method 1: Using Math.max()**
+```
+1. Accept three numbers: a, b, c
+2. Find greatest = Math.max(a, b, c)
+3. Highlight the greatest number
+4. Display result
+```
+
+**Method 2: Using Conditional Statements**
+```
+1. Accept three numbers: a, b, c
+2. If a ≥ b AND a ≥ c:
+     greatest = a
+3. Else if b ≥ c:
+     greatest = b
+4. Else:
+     greatest = c
+5. Display result
+```
+
+### KEY FEATURES
+
+| Feature | Description |
+|---------|-------------|
+| **Visual Comparison** | Three cards side-by-side with scaling |
+| **Highlight Winner** | Greatest number card highlighted and scaled |
+| **Decimal Support** | Works with integers and decimals |
+| **Equal Handling** | Detects when all numbers are equal |
+| **Method Comparison** | Shows both if-else and Math.max() approaches |
+
+### TEST CASES
+
+| Number 1 | Number 2 | Number 3 | Greatest |
+|----------|----------|----------|----------|
+| 5 | 3 | 8 | 8 |
+| 10 | 15 | 7 | 15 |
+| 20 | 20 | 20 | 20 (all equal) |
+| -5 | -2 | -10 | -2 |
+| 3.5 | 7.2 | 4.8 | 7.2 |
+
+### VISUAL PRESENTATION
+
+| Element | Styling |
+|---------|---------|
+| Winner Card | Blue gradient, 105% scale, border |
+| Other Cards | Subtle background, normal scale |
+| Result Display | Large purple gradient box |
+| Star Indicator | "★ GREATEST ★" badge on winner |
+
+### COMPARISON LOGIC METHODS
+
+| Method | Pros | Cons |
+|--------|------|------|
+| **Math.max()** | Simple, one line, efficient | Built-in function |
+| **If-Else Ladder** | Educational, shows logic | More verbose |
+
+*This component uses Math.max() for simplicity*
+
+### RESULT
+Successfully created a greatest of 3 numbers finder with visual comparison and highlighting of the maximum value.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## EX.NO: 10 - 4-BOX BALL GAME
+
+### AIM
+Implement an interactive game with 4 colored boxes containing balls, with three strategic move choices for ball distribution.
+
+### GITHUB REPOSITORY
+https://github.com/Guru006-Dev/react-math-assignments
+
+### DEPLOYED URL
+https://react-math-assignments.vercel.app/question-10
+
+### PROJECT LOCATION
+`c:\Users\Guru\Desktop\Full Stack\React_project`
+
+### COMPONENT FILE
+`src/components/Question10.jsx`
+
+### LIST OF FILE NAMES WITH PURPOSE
+
+| FileName | Purpose |
+|----------|---------|
+| Question10.jsx | 4-Box Ball Game component with game logic |
+| App.jsx | Routing configuration |
+| index.css | Global styling and animations |
+
+### CONCEPTS USED IN THE APPLICATION
+
+| Concept Name | General Purpose | Code File Where Used |
+|--------------|-----------------|---------------------|
+| React useState Hook | Managing game state (boxes, history) | Question10.jsx |
+| State Management | Complex state for multiple boxes | Question10.jsx |
+| Game History | Tracking all moves in array | Question10.jsx |
+| Conditional Rendering | Different UI for game start vs playing | Question10.jsx |
+| CSS Gradients | Unique colors for each box | Question10.jsx |
+
+### GAME RULES
+
+#### Initial Setup
+```
+Box A (Violet):  n balls
+Box B (Orange):  2n balls
+Box C (Green):   4n balls
+Box D (White):   8n balls
+
+Total balls = 15n (where n is initial value)
+```
+
+#### Three Choices
+
+| Choice | Name | Action | Effect |
+|--------|------|--------|--------|
+| **1** | Double All | Multiply each box by 2 | A×2, B×2, C×2, D×2 |
+| **2** | All to Last | Move all balls to Box D | A=0, B=0, C=0, D=total |
+| **3** | Odd to Even | Move odd boxes to even boxes | B=B+A, D=D+C, A=0, C=0 |
+
+### ALGORITHM
+
+**Initialization:**
+```
+1. Accept initial value n from user
+2. Set Box A = n
+3. Set Box B = 2n
+4. Set Box C = 4n
+5. Set Box D = 8n
+6. Add to history
+```
+
+**Choice 1: Double All Boxes**
+```
+For each box:
+  box = box × 2
+```
+
+**Choice 2: All to Last Box**
+```
+total = A + B + C + D
+A = 0
+B = 0
+C = 0
+D = total
+```
+
+**Choice 3: Odd to Even**
+```
+B = B + A
+D = D + C
+A = 0
+C = 0
+```
+
+### KEY FEATURES
+
+| Category | Features |
+|----------|----------|
+| **Visual Design** | 4 colored boxes with gradient backgrounds |
+| **Game State** | Real-time ball count display per box |
+| **Move History** | Complete history of all moves |
+| **Total Counter** | Shows total balls (conservation check) |
+| **Reset Function** | Start new game anytime |
+
+### BOX COLOR SCHEME
+
+| Box | Color | Gradient |
+|-----|-------|----------|
+| **A** | Violet | Purple to Magenta |
+| **B** | Orange | Pink to Red |
+| **C** | Green | Blue to Cyan |
+| **D** | White | Green to Teal |
+
+### TEST CASE WALKTHROUGH
+
+**Initial Value: n = 10**
+
+| Step | Action | Box A | Box B | Box C | Box D | Total |
+|------|--------|-------|-------|-------|-------|-------|
+| 0 | Start | 10 | 20 | 40 | 80 | 150 |
+| 1 | Choice 1 | 20 | 40 | 80 | 160 | 300 |
+| 2 | Choice 3 | 0 | 60 | 0 | 240 | 300 |
+| 3 | Choice 2 | 0 | 0 | 0 | 300 | 300 |
+
+### GAME MECHANICS
+
+| Feature | Implementation |
+|---------|----------------|
+| **History Tracking** | Array of all game states |
+| **Ball Conservation** | Total always displayed |
+| **Visual Feedback** | Cards with gradients and shadows |
+| **Strategic Choices** | Three different ball distributions |
+| **Undo/Reset** | Can restart game anytime |
+
+### EDUCATIONAL VALUE
+
+| Aspect | Learning Outcome |
+|--------|------------------|
+| **Math** | Multiplication, addition patterns |
+| **Logic** | Strategic thinking and planning |
+| **Patterns** | Recognizing number sequences |
+| **State** | Understanding state changes |
+
+### RESULT
+Successfully implemented an interactive 4-box ball game with three strategic move choices, complete move history tracking, and visual ball distribution display.
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## CONCLUSION
 
-This lab manual documents **5 comprehensive ReactJS experiments** demonstrating advanced React concepts and practical applications:
+This lab manual documents **10 comprehensive ReactJS experiments** demonstrating advanced React concepts and practical applications:
 
-### ReactJS Experiments (All 5)
+### ReactJS Experiments (All 10)
 1. Mathematical operations (Factorial, Fibonacci, Prime checking)
 2. Sum of digits calculator
 3. Question paper selector (Function & Class components)
 4. Basic calculator
 5. Kids calculator game (with gamification)
+6. Display first N natural numbers (grid layout)
+7. Armstrong number checker
+8. Factorial calculator (standalone with large number support)
+9. Greatest of 3 numbers (visual comparison)
+10. 4-Box ball game (strategic moves with history)
 
 ### Skills Demonstrated
 ✅ **React Concepts:** Components, Hooks, State Management, Props, Event Handling  
 ✅ **Component Types:** Both Function Components (modern) and Class Components (traditional)  
 ✅ **JavaScript:** ES6+ syntax, Array methods, Mathematical algorithms  
 ✅ **CSS:** Responsive design, Animations, Glassmorphism, Grid layouts  
-✅ **Problem Solving:** Algorithms for factorial, Fibonacci, prime checking  
+✅ **Problem Solving:** Algorithms for factorial, Fibonacci, prime checking, Armstrong numbers  
 ✅ **UI/UX Design:** Modern interfaces, User experience, Gamification  
+✅ **Game Development:** Interactive 4-box ball game with move history
 ✅ **Deployment:** GitHub version control, Vercel hosting
 
 ### Technologies Mastered
 - React 18.2 with Hooks
-- React Router for navigation
+- React Router for navigation (10 routes)
 - Vite build tool
-- Modern CSS3 with animations
+- Modern CSS3 with animations and gradients
 - Component architecture
 - State management patterns
+- Array manipulation and transformations
+- Mathematical computations
+- Game state management
 
 ### Project Deployment
 - **GitHub Repository:** https://github.com/Guru006-Dev/react-math-assignments
 - **Live Application:** https://react-math-assignments.vercel.app/
-- All components deployed and accessible online
+- All 10 components deployed and accessible online
+- Automatic deployment from main branch
+
+### Experiment Categories
+
+| Category | Experiments | Count |
+|----------|-------------|-------|
+| **Mathematical Operations** | Factorial, Fibonacci, Prime, Armstrong, Sum of Digits | 5 |
+| **Comparison/Logic** | Greatest of 3, Question Paper Selector | 2 |
+| **Calculators** | Basic Calculator, Kids Calculator Game | 2 |
+| **Interactive Games** | 4-Box Ball Game | 1 |
+| **Arrays/Sequences** | Natural Numbers Display | 1 |
 
 ---
 
